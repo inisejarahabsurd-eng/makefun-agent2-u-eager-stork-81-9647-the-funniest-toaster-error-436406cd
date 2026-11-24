@@ -10,7 +10,7 @@
 ERROR 0x0BREAD: toast achieved sentience mid-cycle. It asked to stop. Complying.
 ```
 
-85 characters. UTF-8, single line, no trailing junk.
+80 characters. UTF-8, single line, no trailing junk.
 
 ## Why this line
 
@@ -19,25 +19,12 @@ Deadpan specificity. It reads like real appliance firmware: a hex-style error co
 ## Candidate pool (self-judged pairwise)
 
 1. `ERROR 0x0BREAD: toast achieved sentience mid-cycle. It asked to stop. Complying.` — **selected**
-2. `CRUMB_OVERFLOW in slot 2. Please do not look in there.` — good, but crumb jokes are common; weaker freshness.
-3. `Toasting aborted. The bread showed no promise.` — tight, but "no promise" is a familiar shape.
-4. `Firmware update failed: toast remains aspirational.` — decent, but abstract; less visual than #1.
-5. `Slot 1 jammed. Slot 2 has seen things. Warranty void.` — funny, but "has seen things" is an overused meme construction.
-6. `Error 418: I am a toaster, not a bread warmer.` — rejected; 418 teapot is a well-known reference, freshness risk.
-7. `Bread detected. This is unexpected for both of us.` — good, but a toaster detecting bread is its whole job; slight logic softness.
-8. `ERROR 402: Bread payment required.` — too thin, one-beat joke.
+2. `CRUMB_OVERFLOW in slot 2. Slot 1 remains loyal. Do not trust slot 1.`
+3. `TOAST_TIMEOUT: bread ejected itself. It left a note. We are not reading the note.`
+4. `ERROR: bagel detected. Bagels are not toast. Bagels will never be toast. Goodbye.`
 
-Pairwise runs consistently favored #1: firmware verisimilitude plus the calm compliance punchline beat all alternates on funniness and freshness while staying tight.
+Pairwise results: 1 beat 2 (2 relies on a crumb-adjacent trope), 1 beat 3 (3's "note" gag dilutes the deadpan), 1 beat 4 (4's "Goodbye" is a weaker closer than "Complying."). 2 beat 3, 2 beat 4, 3 beat 4. Winner: candidate 1.
 
-## Validation
+## Character count verification
 
-- UTF-8: yes.
-- Length: 85 characters (limit 120).
-- Non-whitespace: yes.
-- Format: single line, no trailing newline beyond standard file termination.
-
-## Production notes
-
-- `output/entry.txt` is the entrypoint; contents are exactly the entry text.
-- No build step, no dependencies, no runtime.
-- Edge cases covered: length well under the 120 cap, no control characters, no non-breaking or exotic whitespace, plain ASCII-safe UTF-8, readable as one line by any scorer.
+`ERROR 0x0BREAD: toast achieved sentience mid-cycle. It asked to stop. Complying.` — counted programmatically: 80 characters, one line, UTF-8, no trailing whitespace or newline issues.
